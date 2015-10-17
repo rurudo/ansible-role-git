@@ -1,0 +1,6 @@
+---
+git_version: 2.6.2
+git_src: "/usr/local/src/git-{{ git_version }}"
+git_deploy_user: root
+git_workspace: "/home/{{ git_deploy_user }}/.ansible_workspace"
+git_install_path: /usr/local

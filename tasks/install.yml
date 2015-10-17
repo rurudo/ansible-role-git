@@ -1,0 +1,15 @@
+---
+- name: Check git version
+  command: git version
+  register: git_installed_version
+  changed_when: false
+  always_run: yes
+
+- name: Install git
+  command: make --prefix={{ git_install_path }} {{ item }}
+  args:
+    chdir: "{{ git_workspace }}/git-{{ git_version }}" 
+  with_items:
+    - all
+    - install
+  when: git_installed_version.stdout.find("{{ git_version }}")==-1

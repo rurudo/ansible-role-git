@@ -1,0 +1,9 @@
+---
+- name: Install the dependencies for compiling and installing the Git binaries
+  apt: pkg={{ item }}
+  with_items:
+    - libcurl4-gnutls-dev
+    - libexpat1-dev
+    - gettext
+    - libz-dev
+    - libssl-dev
