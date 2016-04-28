@@ -1,3 +1,8 @@
 ---
 - name: Install git
   apt_repository: repo='ppa:git-core/ppa'
+
+- name: Copy user config file
+  template:
+    src=gitconfig.j2
+    dest=/home/{{ user }}/.gitconfig
